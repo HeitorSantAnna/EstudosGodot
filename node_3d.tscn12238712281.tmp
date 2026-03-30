@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bqg02h23fjlij"]
+
+[ext_resource type="Script" uid="uid://8awteomrva5t" path="res://Teste.gd" id="1_a202f"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4xowi"]
+
+[node name="Node3D" type="Node3D" unique_id=1218674204]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=358981307]
+script = ExtResource("1_a202f")
+
+[node name="Camera3D" type="Camera3D" parent="CSGSphere3D" unique_id=1617886962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.205)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="CSGSphere3D" unique_id=1567724108]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGSphere3D/RigidBody3D" unique_id=184055920]
+shape = SubResource("SphereShape3D_4xowi")

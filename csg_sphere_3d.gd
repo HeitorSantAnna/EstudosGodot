@@ -1,8 +1,13 @@
-extends Node
+extends CSGSphere3D
 
-var teste = false
+var andar = Vector3(2, 0, 0).normalized()
 
-var andar = Vector2()
+var r = 2
+
+var e = 2
+
+var soma = 200
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,5 +16,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$".".andar.x += 1
+	position += andar * 1 * delta
 	pass
