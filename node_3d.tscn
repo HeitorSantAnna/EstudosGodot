@@ -1,18 +1,8 @@
 [gd_scene format=3 uid="uid://bqg02h23fjlij"]
 
-[ext_resource type="Script" uid="uid://c2w6k4s0iefvh" path="res://csg_sphere_3d.gd" id="1_a202f"]
+[node name="Node2D" type="Node2D" unique_id=1789821992]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_a202f"]
-
-[node name="Node3D" type="Node3D" unique_id=1311519057]
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=564874518]
-script = ExtResource("1_a202f")
-
-[node name="Camera3D" type="Camera3D" parent="CSGSphere3D" unique_id=1360188490]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.255)
-
-[node name="RigidBody3D" type="RigidBody3D" parent="CSGSphere3D" unique_id=2047639938]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGSphere3D/RigidBody3D" unique_id=1780388166]
-shape = SubResource("SphereShape3D_a202f")
+[node name="Label" type="Label" parent="." unique_id=468501300]
+offset_right = 99.0
+offset_bottom = 23.0
+text = "Olá Mundo!!!"
