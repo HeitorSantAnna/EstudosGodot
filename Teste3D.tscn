@@ -27,7 +27,7 @@ shape = SubResource("SphereShape3D_wf1nt")
 material = SubResource("StandardMaterial3D_l6r0r")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1512294188]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.7370485, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.2237263, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1550784280]
 axis_lock_linear_x = true
