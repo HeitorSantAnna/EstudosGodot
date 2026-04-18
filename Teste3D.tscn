@@ -1,21 +1,17 @@
 [gd_scene format=3 uid="uid://tjx4t1p7whci"]
 
+[ext_resource type="Script" uid="uid://cestr51jghafh" path="res://MovePlayerSphere.gd" id="1_l6r0r"]
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_wf1nt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6r0r"]
 albedo_color = Color(0, 1, 1, 1)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l6r0r"]
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_gpr1d"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_l6r0r"]
-
 [node name="Node3D" type="Node3D" unique_id=494841327]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1545918464]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-axis_lock_linear_y = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("1_l6r0r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=2003684592]
 shape = SubResource("SphereShape3D_wf1nt")
@@ -24,26 +20,4 @@ shape = SubResource("SphereShape3D_wf1nt")
 material = SubResource("StandardMaterial3D_l6r0r")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1512294188]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.2237263, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1550784280]
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-physics_material_override = SubResource("PhysicsMaterial_l6r0r")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1897867106]
-shape = SubResource("WorldBoundaryShape3D_gpr1d")
-debug_color = Color(0.30588236, 0.53333336, 0.8745098, 1)
-
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=790663382]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 1, 0)
-gravity_scale = 0.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1002229748]
-shape = SubResource("BoxShape3D_l6r0r")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D/CollisionShape3D" unique_id=1666549190]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.4523106, 0)
