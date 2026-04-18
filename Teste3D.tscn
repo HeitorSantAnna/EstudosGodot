@@ -7,7 +7,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6r0r"]
 albedo_color = Color(0, 1, 1, 1)
 
-[node name="Node3D" type="Node3D" unique_id=494841327]
+[node name="Player" type="Node3D" unique_id=494841327]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1545918464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -18,6 +18,3 @@ shape = SubResource("SphereShape3D_wf1nt")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="CharacterBody3D/CollisionShape3D" unique_id=1025681603]
 material = SubResource("StandardMaterial3D_l6r0r")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1512294188]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.4523106, 0)

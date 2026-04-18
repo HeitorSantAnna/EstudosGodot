@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bmiallgv0gp0n"]
+
+[ext_resource type="PackedScene" uid="uid://tjx4t1p7whci" path="res://Teste3D.tscn" id="1_tt30a"]
+[ext_resource type="PackedScene" uid="uid://8sv7wcyja1mc" path="res://obstaculos.tscn" id="2_1ey7h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ey7h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o1ld7"]
+albedo_color = Color(0.43671513, 0.42377743, 0.13267815, 1)
+
+[node name="Home" type="Node3D" unique_id=1939138119]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=2086002742]
+collision_layer = 3
+collision_mask = 3
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1612836565]
+shape = SubResource("BoxShape3D_1ey7h")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D/CollisionShape3D" unique_id=1200552268]
+transform = Transform3D(25, 0, 0, 0, 0.1, 0, 0, 0, 25, 0, 0, 0)
+material = SubResource("StandardMaterial3D_o1ld7")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=931848983]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0)
+
+[node name="Player" parent="." unique_id=494841327 instance=ExtResource("1_tt30a")]
+
+[node name="Obstaculos" parent="." unique_id=1736051229 instance=ExtResource("2_1ey7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 1)
+
+[node name="Obstaculos2" parent="." unique_id=134981180 instance=ExtResource("2_1ey7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 2)
+
+[node name="Obstaculos3" parent="." unique_id=2020359643 instance=ExtResource("2_1ey7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 3)
+
+[node name="Obstaculos4" parent="." unique_id=241961958 instance=ExtResource("2_1ey7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 4)
+
+[node name="Obstaculos5" parent="." unique_id=2025977884 instance=ExtResource("2_1ey7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 5)
