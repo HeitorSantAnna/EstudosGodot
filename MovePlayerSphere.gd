@@ -30,4 +30,4 @@ func _process(delta: float) -> void:
 		dash = 2
 	
 	position += pos * dash * delta
-	print(collision_layer)
+	print(position.y);

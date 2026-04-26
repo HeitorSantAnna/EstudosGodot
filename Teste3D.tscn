@@ -7,6 +7,8 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6r0r"]
 albedo_color = Color(0, 1, 1, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6r0r"]
+
 [node name="Player" type="Node3D" unique_id=494841327]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1545918464]
@@ -19,5 +21,21 @@ shape = SubResource("SphereShape3D_wf1nt")
 [node name="CSGSphere3D" type="CSGSphere3D" parent="CharacterBody3D/CollisionShape3D" unique_id=1025681603]
 material = SubResource("StandardMaterial3D_l6r0r")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1492613547]
-transform = Transform3D(1, 0, 0, 0, 0.013246701, 0.99991226, 0, -0.99991226, 0.013246701, 0, 2.152536, 0)
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=617918480]
+transform = Transform3D(0.85721225, -0.51496327, 0, 0.51496327, 0.85721225, 0, 0, 0, 1, 3.8495536, 0.5, 0)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1424115673]
+shape = SubResource("BoxShape3D_l6r0r")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D/CollisionShape3D" unique_id=1451744848]
+transform = Transform3D(7.66, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=950885692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.868387, 5.8689876)
