@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends RigidBody3D
 
 var dash = 2
 var accel = false
@@ -14,20 +14,9 @@ func _process(delta: float) -> void:
 	else:
 		accel = false
 	
-	if Input.is_action_just_pressed("Alterar Plano"):
-		plane = true
-	else: if Input.is_action_just_pressed("Alterar Plano") and plane:
-		plane = false
-	
-	if plane:
-		collision_layer = 2
-	else:
-		collision_layer = 1
-	
 	if accel:
 		dash = 4
 	else:
 		dash = 2
 	
 	position += pos * dash * delta
-	print(position.y);
