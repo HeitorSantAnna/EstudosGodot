@@ -1,0 +1,9 @@
+extends MeshInstance2D
+
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+func _process(delta: float) -> void:
+	print(texture.get_size())
+	pass
