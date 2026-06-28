@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cwpnpskriuxp4"]
+
+[ext_resource type="PackedScene" uid="uid://d1d47rdstymk6" path="res://playerScene.tscn" id="1_rn8gm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bryi6"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[node name="InGame" type="Node2D" unique_id=79611929]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=829729206]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1292349506]
+
+[node name="Player" parent="." unique_id=1342927700 instance=ExtResource("1_rn8gm")]
+
+[node name="Label" type="Label" parent="." unique_id=2019534920]
+z_index = 1
+offset_left = -74.0
+offset_top = -310.0
+offset_right = 81.0
+offset_bottom = -255.0
+text = "Pontos: "
+label_settings = SubResource("LabelSettings_bryi6")
+visible_characters_behavior = 1
