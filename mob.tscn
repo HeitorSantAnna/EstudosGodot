@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cvwk47o6fxn0l"]
+
+[ext_resource type="Script" uid="uid://ce1j2fb16xjrs" path="res://mob.gd" id="1_1qmh0"]
+[ext_resource type="Texture2D" uid="uid://bh2y5xcx5al1m" path="res://enemyFlyingAlt_1.png" id="1_b3mxk"]
+[ext_resource type="Texture2D" uid="uid://bjiwm5u1eutp" path="res://enemyFlyingAlt_2.png" id="2_1qmh0"]
+[ext_resource type="Texture2D" uid="uid://dbktcu5to01sp" path="res://enemySwimming_1.png" id="3_gfurk"]
+[ext_resource type="Texture2D" uid="uid://bewwgjbi3byvq" path="res://enemySwimming_2.png" id="4_ieysi"]
+[ext_resource type="Texture2D" uid="uid://ce5evgbj873qf" path="res://enemyWalking_1.png" id="5_cixyi"]
+[ext_resource type="Texture2D" uid="uid://bibfm7krj7d7x" path="res://enemyWalking_2.png" id="6_7ulmv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcqmr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b3mxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1qmh0")
+}],
+"loop": true,
+"name": &"Fly",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gfurk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ieysi")
+}],
+"loop": true,
+"name": &"Swim",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cixyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7ulmv")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b3mxk"]
+radius = 37.0
+height = 98.0
+
+[node name="Mob" type="RigidBody2D" unique_id=2015877831 groups=["mobs"]]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_1qmh0")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=590197763]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_pcqmr")
+animation = &"Swim"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1301230983]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_b3mxk")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=457474297]
