@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://tnusrbyelw0q"]
+
+[ext_resource type="Script" uid="uid://3mybaos323jc" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dhvo84p2uqrat" path="res://player3D.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bk3m7osdbrnqn" path="res://mobs3D.tscn" id="2_h2yge"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+albedo_color = Color(0.2596095, 0.4971825, 0.8325797, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
+material = SubResource("StandardMaterial3D_ig7tw")
+size = Vector3(60, 2, 60)
+
+[sub_resource type="Curve3D" id="Curve3D_h2yge"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -13.019448, 0, -14.070726, 0, 0, 0, 0, 0, 0, 12.789222, 0, -14.070726, 0, 0, 0, 0, 0, 0, 12.789222, 0, 14.751151, 0, 0, 0, 0, 0, 0, -13.15046, 0, 15.013168),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="Main" type="Node" unique_id=567409197]
+script = ExtResource("1_0xm2m")
+mob_scene = ExtResource("2_h2yge")
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=448213317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1485998067]
+shape = SubResource("BoxShape3D_7dm0k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1324638816]
+mesh = SubResource("BoxMesh_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1573702629]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 26.401764, 0)
+shadow_enabled = true
+
+[node name="Player3D" parent="." unique_id=1976320543 instance=ExtResource("1_ig7tw")]
+
+[node name="CameraPivot" type="Marker3D" parent="." unique_id=542094864]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=828319496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
+projection = 1
+size = 19.0
+far = 100.0
+
+[node name="SpawnPath" type="Path3D" parent="." unique_id=1890556222]
+curve = SubResource("Curve3D_h2yge")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath" unique_id=718438080]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -13.019448, 0, -14.070726)
+
+[node name="MobTimer" type="Timer" parent="." unique_id=1966019085]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

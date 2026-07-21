@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dhvo84p2uqrat"]
+
+[ext_resource type="PackedScene" uid="uid://fnqrrx4g58kq" path="res://Modelos/player.glb" id="1_45eme"]
+[ext_resource type="Script" uid="uid://bpvhywou46x7x" path="res://player_3d.gd" id="1_fd18j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fd18j"]
+size = Vector3(1.640564, 1, 1.8435059)
+
+[node name="Player3D" type="CharacterBody3D" unique_id=1976320543]
+collision_mask = 6
+script = ExtResource("1_fd18j")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=1997320225]
+
+[node name="Character" parent="Pivot" unique_id=696025868 instance=ExtResource("1_45eme")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=389497848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040924072, 0, 0.04333496)
+shape = SubResource("BoxShape3D_fd18j")
